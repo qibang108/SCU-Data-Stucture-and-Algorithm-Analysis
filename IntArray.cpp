@@ -2,7 +2,8 @@
 using namespace std;
 class IntArray {
 private:
-	int *data; int size;
+	int *data; 
+	int size;
 public:
 	IntArray(int *in,int s){
 		data=in ;
