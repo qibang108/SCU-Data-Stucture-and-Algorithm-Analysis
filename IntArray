@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+class IntArray {
+private:
+	int *data; int size;
+public:
+	IntArray(int *in,int s){
+		data=in ;
+		size = s;
+	}
+	int getSize() {
+		return size;
+	}
+	int setValue(int j, int val) {
+		if (j<0 || j>size)return -1;
+		data[j] = val;
+		return 0;
+	}
+	void showArray() {
+		cout << "{ ";
+		for (int t = 0; t < size; t++)
+		{
+			cout << data[t] << " ";
+		}
+		cout << "}";
+	}
+};
+//Test
+int main() {
+	int i, size, v;
+	int in[6]
+	IntArray array(in,6);
+	size = array.getSize();
+	cout << "Please input numbers: "<<endl;
+	for ( i = 0; i < size; i++)
+	{
+		cin >> v;
+		array.setValue(i, v);
+	}
+	cout << "array["<<size<<"]=";
+	array.showArray();
+	cout << endl;
+	system("pause");
+}
