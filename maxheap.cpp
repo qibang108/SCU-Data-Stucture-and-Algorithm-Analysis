@@ -5,8 +5,8 @@ using namespace std;
 
 template<class Elem>void maxheap<Elem>::siftdown(int pos){
 
-	while (!isLeaf(pos)) {
-
+	while (!isLeaf(pos)) 
+	{
 		int j = leftchild(pos);
 
 		int rc = rightchild(pos);
@@ -31,7 +31,6 @@ template<class Elem>bool maxheap<Elem>::insert(const Elem &val){
 	Heap[curr] = val;
 
 	// Now sift up until curr's parent> curr 
-
 	while ((curr != 0) && (Heap[curr]>Heap[parent()]))
 	{
 		swap(Heap, curr, parent(curr));
