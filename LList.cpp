@@ -93,9 +93,8 @@ int LList<Elem>::findElem(Elem x) {
 	while(fence!= NULL) {
 		if (fence->element == x) {
 			return i;
-			break;
 		}
-		else i++;
+		i++;
 		fence = fence->next;
 	}
 	return 0;
