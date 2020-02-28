@@ -1,6 +1,3 @@
-#include<iostream>
-using namespace std;
-
 template<class Elem> class maxheap {
 private:
 	Elem* Heap;   // Pointer to the heap array
