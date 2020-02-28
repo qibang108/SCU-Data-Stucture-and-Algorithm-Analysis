@@ -10,13 +10,13 @@ private:
 	int leftcnt;             // Size of left，左边部分元素数
 	int rightcnt;            // Size of right，右边部分元素数
 	
-    // Intialization routine，初始化链表，创建第一个结点
-    void init() {            
+	// Intialization routine，初始化链表，创建第一个结点
+	void init() {            
 		fence = tail = head = new Link<Elem>;
 		leftcnt = rightcnt = 0;
 	}
     
-    // Return link nodes to free store，将申请的空间返回给内存
+	// Return link nodes to free store，将申请的空间返回给内存
 	void removeall()         
 	{
 		while (head != NULL)
@@ -31,14 +31,14 @@ public:
 	~LList() { removeall(); }
 	void clear() { removeall();   init(); }
 	
-    void setStart()            
+	void setStart()            
 	{
 		fence = head;           //令fence=head，定位在表头
 		rightcnt += leftcnt;
 		leftcnt = 0;
 	}
-	
-    void setEnd()             
+
+	void setEnd()             
 	{
 		fence = tail;           //令fence=tail，定位在表尾 
 		leftcnt += rightcnt;
@@ -56,12 +56,13 @@ public:
 	int leftLength() const { return leftcnt; }
 	int rightLength() const { return rightcnt; }
 	
-    bool getValue(Elem& it) const
+	bool getValue(Elem& it) const
 	{
 		if (rightLength() == 0) return false;
 		it = fence->next->element;       //获得当前fence指针所指结点下一结点的元素域
 		return true;
 	}
+	
 	bool insert(const Elem& item);
 	bool append(const Elem& item);
 	bool remove(Elem& it);
