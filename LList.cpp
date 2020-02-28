@@ -66,9 +66,9 @@ void LList<Elem>::printList() {
 template <class Elem> void
 LList<Elem>::prev() {
 	Link<Elem>* temp = head;
-	if (fence == head) return; // No prev Elem
+	if (fence == head) return; 	// No prev Elem
 	while (temp->next != fence)
-		temp = temp->next;    //将temp指针移到fence前一位
+		temp = temp->next;	//将temp指针移到fence前一位
 	fence = temp;
 	leftcnt--;
 	rightcnt++;
@@ -85,6 +85,7 @@ void LList<Elem>::printElem(const int n) {
 	cout << "the " << n << "th number in this list is " <<"'"<< fence->element<<"'"<< endl;
 }
 
+//在链表中查找元素，如果存在输出位置，不存在输出0
 template <class Elem>
 int LList<Elem>::findElem(Elem x) {
 	int i = 1;
@@ -94,7 +95,7 @@ int LList<Elem>::findElem(Elem x) {
 			return i;
 			break;
 		}
-		else if(fence->element != x) i++;
+		else i++;
 		fence = fence->next;
 	}
 	return 0;
