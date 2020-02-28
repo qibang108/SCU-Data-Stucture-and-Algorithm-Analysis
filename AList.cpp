@@ -1,11 +1,11 @@
 #include<iostream>
 using namespace std;
-class IntArray {
+class AList {
 private:
 	int *data; 
 	int size;
 public:
-	IntArray(int *in,int s){
+	AList(int *in,int s){
 		data=in ;
 		size = s;
 	}
@@ -17,7 +17,7 @@ public:
 		data[j] = val;
 		return 0;
 	}
-	void showArray() {
+	void showList() {
 		cout << "{ ";
 		for (int t = 0; t < size; t++)
 		{
@@ -30,16 +30,19 @@ public:
 int main() {
 	int i, size, v;
 	int in[6]
-	IntArray array(in,6);
-	size = array.getSize();
+	AList al(in,6);
+	size = al.getSize();
+	
 	cout << "Please input numbers: "<<endl;
 	for ( i = 0; i < size; i++)
 	{
 		cin >> v;
-		array.setValue(i, v);
+		al.setValue(i, v);
 	}
 	cout << "array["<<size<<"]=";
-	array.showArray();
+	al.showList();
 	cout << endl;
+	
 	system("pause");
+	return 0;
 }
