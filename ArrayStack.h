@@ -5,10 +5,10 @@ class ArrayStack
 private:
 	int size;
 	int top;
-	Elem *listArray;
+	Elem *array;
 public:
 	ArrayStack(int insize);
-	~ArrayStack() { delete[] listArray; }
+	~ArrayStack() { delete[] array; }
 	void clear() { top = 0; }
 	bool push(const Elem& item);
 	Elem pop();
@@ -16,4 +16,3 @@ public:
 	int length() const { return top; }
 	void printStack();
 };
-
