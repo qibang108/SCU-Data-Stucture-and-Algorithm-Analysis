@@ -8,7 +8,7 @@ private:
 public:
 	LinkStack() { top = NULL; size = 0; }
 	~LinkStack() { clean(); }
-	void clean();
+	void clear();
 	bool push(const Elem& item);
 	bool pop(Elem& it);
 	Elem topValue();
