@@ -1,4 +1,4 @@
-//Class of Node in linkArray
+//Class of Node in linked structure
 
 template <class T>class Link {                          
 public:
@@ -16,4 +16,3 @@ public:
 		next = nextval;
 	}                      
 };
-
